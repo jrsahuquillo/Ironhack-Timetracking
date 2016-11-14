@@ -4,4 +4,8 @@ Rails.application.routes.draw do
 
   get'/contact', to: 'site#contact'
 
+  get'/calculator', to: 'site#calculator'
+
+  post '/calculate', to: 'site#calculate'
+
 end
