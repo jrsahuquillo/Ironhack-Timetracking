@@ -10,5 +10,12 @@ Rails.application.routes.draw do
 
   get '/projects', to: 'projects#index'
 
-  get '/projects/:id', to: 'projects#show'
+  get '/projects/new', to: 'projects#new'
+
+  get '/projects/:id', to: 'projects#show' #Params request goes always below of all.
+
+  #get '/projects/:cualquier_variable', to: 'projects#loquesea' #Returns error, can´t be the same URI.
+
+  post '/projects', to: 'projects#create'
+
 end
