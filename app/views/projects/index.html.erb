@@ -1,5 +1,5 @@
 
-<h1>Last 15 Projects</h1>
+<h1>Last 10 Projects</h1>
 <hr>
 
   <ul>
@@ -8,6 +8,7 @@
       <%= project.name + ": "%>
       <% if project.description.present? %>
         <%= project.description %>
+        <a href ="/projects/<%= project.id %>">Show project</a>
       <% end %>
     </li>
     <% end %>

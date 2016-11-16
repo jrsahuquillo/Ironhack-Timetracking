@@ -1,0 +1,7 @@
+<h1><%= @my_project.name %></h1>
+<hr>
+<h2>Project ID :<%= @my_project.id.to_s %></h2>
+<% if @my_project.description.present? %>
+  <p><%= @my_project.description %></p>
+  <% end %>
+<a href="/projects">Back to projects page</a>
