@@ -1,4 +1,13 @@
 <h1>Add a new project</h1>
+
+<% if @my_project.errors.any? %>
+  <ul>
+    <% @my_project.errors.full_messages.each do |error_msg| %>
+      <li><%= error_msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_for @my_project do |f| %>
   <%= f.label :name %><br>
   <%= f.text_field :name %>
@@ -8,4 +17,7 @@
   <br><br>
   <%= f.button %>
   <% end %>
+
+
+
 <a href="/projects">Back to projects page ></a>

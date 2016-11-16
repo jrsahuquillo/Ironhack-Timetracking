@@ -1,9 +1,21 @@
 <h1><%= @my_project.name %></h1>
 <hr>
 <h2>Project ID :<%= @my_project.id.to_s %></h2>
-<% if @my_project.description.present? %>
-  <p><%= @my_project.description %></p>
+  <% if @my_project.description.present? %>
+    <p><%= @my_project.description %></p>
   <% end %>
 <a href="/projects">Back to projects page</a>
 <br>
 <a href="/projects/<%= @my_project.id %>/time_entries">Time entry ></a>
+
+
+<ul>
+  <li>
+    <% if @my_project.name.present? %>
+      <%= @my_project.name %> -
+    <% end %>
+    <% if @my_project.description.present? %>
+      <%= @my_project.description %>
+    <% end %>
+  </li>
+</ul>

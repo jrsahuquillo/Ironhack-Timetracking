@@ -15,6 +15,7 @@ class TimeEntriesController < ApplicationController
     @my_entry = @my_project.time_entries.new(hours: params[:time_entry][:hours],
                             minutes: params[:time_entry][:minutes],
                             date: params[:time_entry][:date])
+    
     if @my_entry.save
       redirect_to "/projects/#{@my_project.id}/time_entries"
     else

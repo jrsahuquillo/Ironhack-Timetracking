@@ -13,15 +13,18 @@ class ProjectsController < ApplicationController
 
   def new
     @my_project = Project.new
-
   end
 
   def create
     @my_project = Project.new(
-      :name => params[:project][:name],
-      :description => params[:project][:description])
-    @my_project.save
+      name: params[:project][:name],
+      description: params[:project][:description])
 
-    redirect_to "/projects/#{@my_project.id}" #Comillas dobles!!!!
+    if @my_project.save
+      redirect_to "/projects/#{@my_project.id}"#Comillas dobles!!!!
+    else
+      render "projects/new"
+    end
+
   end
 end
