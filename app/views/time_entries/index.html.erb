@@ -1,12 +1,15 @@
 <h1><%= @my_project.name %></h1>
 <hr>
+<h2>Total time</h2>
 <ul>
-  <%= @my_entries.each do |entry| %>
+  <% @my_entries.each do |entry| %>
     <li>
       <%= entry.hours %> hour
       <%= entry.minutes %> minute -
-      Creation: <%= entry.created_at %>
-      Updated: <%= entry.updated_at %>
+      Date: <%= entry.date %>
+
     </li>
   <% end %>
 </ul>
+<a href="/projects/">Show projects</a>
+<a href="/projects/<%= @my_project.id %>/time_entries/new">Entry time</a>
