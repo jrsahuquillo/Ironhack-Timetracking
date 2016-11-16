@@ -13,6 +13,6 @@
 # Project.create!(name: 'Programs', description: 'Code projects')
 
 1.upto(10).each do |i|
-  Project.create!(name: "Ironhack#{i}", description: "description #{i}")
+  project = Project.create!(name: "Ironhack#{i}", description: "description #{i}")
   project.time_entries.create(minutes: rand(1..60), hours: rand(0..2))
 end
