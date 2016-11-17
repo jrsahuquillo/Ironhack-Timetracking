@@ -25,6 +25,5 @@ class ProjectsController < ApplicationController
     else
       render "projects/new"
     end
-
   end
 end

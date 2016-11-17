@@ -11,7 +11,9 @@
       <!-- <a href="/projects/<%= @my_project.id %>/time_entries/<%= entry.id %>/edit">Edit time entry ></a> -->
       <!-- Is better the link below -->
 
-      <%= link_to ' Edit time entry >>', "/projects/ #{@my_project.id}/time_entries/#{entry.id}/edit" %>
+      <%= link_to 'Edit time entry >> ', "/projects/ #{@my_project.id}/time_entries/#{entry.id}/edit" %>
+      <%= link_to('Delete time entry >>', project_time_entry_path(@my_project, entry),
+          method: :delete, data: { confirm: 'Are you sure?' }) %>
     </li>
   <% end %>
 </ul>

@@ -38,9 +38,17 @@ class TimeEntriesController < ApplicationController
                         # minutes: params[:time_entry][:minutes],
                         # date: params[:time_entry][:date])
       redirect_to "/projects/#{@my_project.id}/time_entries"
+      # redirect_to action: :index, project_id: @my_project_id
     else
       render "edit"
     end
+  end
+
+  def destroy
+    @my_project = Project.find params[:project_id]
+    @my_entry = @my_project.time_entries.find_by(id: params[:id]).destroy
+    redirect_to "/projects/#{@my_project.id}/time_entries"
+    # redirect_to action: :index, project_id: @my_project_id
   end
 
 private
