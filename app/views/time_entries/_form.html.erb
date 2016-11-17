@@ -1,4 +1,6 @@
-<% if @my_entry.errors.any? %>  
+<!-- Partial -->
+
+<% if @my_entry.errors.any? %>
 <ul>
   <% @my_entry.errors.full_messages.each do |error_msg| %>
     <li><%= error_msg %></li>
