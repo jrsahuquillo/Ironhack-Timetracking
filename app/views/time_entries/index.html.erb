@@ -7,10 +7,11 @@
       <%= entry.hours %> hour
       <%= entry.minutes %> minute -
       Date: <%= entry.date %>
-
+      <a href="/projects/<%= @my_project.id %>/time_entries/<%= entry.id %>/edit">Edit time entry ></a>
     </li>
   <% end %>
 </ul>
 <a href="/projects/<%= @my_project.id %>/time_entries/new">Entry time ></a>
+<br>
 <br>
 <a href="/projects/">Back to projects ></a>
